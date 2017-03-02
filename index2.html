@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Geog 483 Leaflet Tutorial</title>
+	<!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+</head>
+<body>
+<h1> Geog 483 Tutorial - Part B </h1>
+
+<style>
+    	body { margin:0; padding:0; }
+    	#mapid { position:absolute; top:60px; bottom:25px; left:25px; width:875px; height:850px;}
+</style>
+
+<div id="mapid"</div>
+<script>
+
+	var mymap = L.map('mapid').setView([43.469, -80.544], 16);
+
+	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+	}).addTo(mymap);
+
+	L.marker([43.4682, -80.5434]).addTo(mymap)
+		.bindPopup("<b>Ev3</b><br />Environment 3 building").openPopup();
+
+	L.marker([43.4670, -80.5424]).addTo(mymap)
+		.bindPopup("<b>PAS</b><br />Psychology, Anthropology, Sociology building").openPopup();
+		
+	L.marker([43.4697, -80.5422]).addTo(mymap)
+		.bindPopup("<b>DP</b><br />Dana Porter Library").openPopup();
+	
+	L.marker([43.4692, -80.5403]).addTo(mymap)
+		.bindPopup("<b>SCH</b><br />South Campus Hall").openPopup();
+		
+	L.marker([43.4716, -80.5454]).addTo(mymap)
+		.bindPopup("<b>SLC</b><br />Student Life Center").openPopup();
+		
+</script>
+
+
+
+</body>
+</html>
